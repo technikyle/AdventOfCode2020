@@ -1,0 +1,9 @@
+{
+    "watch": ["build/**/*.js", "Source/views/**/*.ejs", "Source/i18n/locales/**/*.json"],
+    "ignore": "build/**/*.spec.js",
+    "ext": "js,ejs,json",
+    "events": {
+      "restart": "mkdir -p build/views && cp Source/views/*.ejs build/views && cp Source/i18n/locales/*.json build/i18n/locales"
+    }
+  }
+  
