@@ -1,5 +1,5 @@
 {
-    "watch": ["build/**/*.js", "Source/views/**/*.ejs", "Source/i18n/locales/**/*.json"],
+    "watch": ["build/**/*.js"],
     "ignore": "build/**/*.spec.js",
     "ext": "js,ejs,json",
     "events": {

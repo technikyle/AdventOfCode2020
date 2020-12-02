@@ -7,11 +7,12 @@
       {
         "type": "node",
         "request": "launch",
+        "preLaunchTask": "tsc: watch",
         "name": "Launch Program",
         "skipFiles": [
           "<node_internals>/**"
         ],
-        "program": "${workspaceFolder}/Source/app.ts",
+        "program": "${workspaceFolder}/source/app.ts",
         "sourceMaps": true,
         "trace": "all",
         "outFiles": [
