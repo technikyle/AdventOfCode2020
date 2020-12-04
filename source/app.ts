@@ -1,8 +1,8 @@
 import express from 'express'
 
-import {p2} from './problems/day2'
+import {p1} from './problems/day3'
 
-console.log(`p2: ${p2()}`)
+console.log(`p1: ${p1()}`)
 
 
 const app = express()
