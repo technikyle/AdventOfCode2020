@@ -847,11 +847,11 @@ FBFFBBFRRL
 BBFBFFBRLL
 `
 
-type BSP = [rowBSP: string, seatBSP: string];
-type Seat = [row: number, seat: number];
+type BSP = {rowBSP: string, aisleBSP: string}
+type Seat = {row: number, aisle: number}
 
 function parseLine(x: string): BSP {
-    let result: BSP = [x.slice(0, 7), x.slice(7,10)]
+    let result: BSP = {rowBSP: x.slice(0, 7), aisleBSP: x.slice(7,10)}
     return result
 }
 
@@ -881,19 +881,19 @@ function binary(input: string, forward: string): number {
 
 
 let computeSeat = (passport: BSP): Seat => { 
-    let row = binary(passport[0], "F")
-    let seat = binary(passport[1], "L")
-    return [row, seat]
+    let row = binary(passport.rowBSP, "F")
+    let aisle = binary(passport.aisleBSP, "L")
+    return {row, aisle}
 }
 
 let computeSeatId = (seat: Seat): number => { 
-    return seat[0] * 8 + seat[1]
+    return seat.row* 8 + seat.aisle
 }
 
 let seatIds = lines.map(computeSeat).map(computeSeatId)
 
 export function p1(): number {
-    let maxSeatId = Math.max.apply(Math, seatIds)
+    let maxSeatId = Math.max(...seatIds)
     return maxSeatId
 }
 

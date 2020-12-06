@@ -1105,15 +1105,15 @@ iyr:2029
 hgt:183cm cid:187 byr:2019 ecl:xry iyr:2013 pid:164cm hcl:#18171d eyr:2021
 `
 
-interface Passport {
-    pid?: string;
-    iyr?: string;
-    byr?: string;
-    eyr?: string;
-    cid?: string;
-    hgt?: string;
-    hcl?: string;
-    ecl?: string;
+type Passport = {
+    pid?: string
+    iyr?: string
+    byr?: string
+    eyr?: string
+    cid?: string
+    hgt?: string
+    hcl?: string
+    ecl?: string
 }
 
 function parseLine(x: string): Passport {

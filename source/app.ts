@@ -1,6 +1,6 @@
 import express from 'express'
 
-import {p1, p2} from './problems/day5'
+import {p1, p2} from './problems/day6'
 
 console.log(`p1: ${p1()}`)
 console.log(`p2: ${p2()}`)

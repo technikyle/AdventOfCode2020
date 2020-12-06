@@ -1001,7 +1001,7 @@ const input: string = `
 7-11 g: xzgnggggrggrg
 `
 
-type TestValues = [min: number, max: number, char: string, text: string];
+type TestValues = {min: number, max: number, char: string, text: string}
 
 export function p1(): number {
     function parseLine(x: string): TestValues {
@@ -1009,9 +1009,9 @@ export function p1(): number {
         let minMax = values[0].split('-')
         let min = +minMax[0]
         let max = +minMax[1]
-        let charString = values[1][0]
+        let char = values[1][0]
         let text = values[2]
-        let result: TestValues = [min, max, charString, text]
+        let result: TestValues = {min, max, char, text}
         return result
     }
 
@@ -1021,7 +1021,7 @@ export function p1(): number {
     })
 
     function passesTest(x: TestValues): boolean {
-        let [min, max, char, text] = x
+        let {min, max, char, text} = x
         let count = (text.match(new RegExp(char, "g")) || []).length
         let result = count >= min && count <= max
         return result
@@ -1039,9 +1039,9 @@ export function p2(): number {
         let minMax = values[0].split('-')
         let min = +minMax[0]
         let max = +minMax[1]
-        let charString = values[1][0]
+        let char = values[1][0]
         let text = values[2]
-        let result: TestValues = [min, max, charString, text]
+        let result: TestValues = {min, max, char, text}
         return result
     }
 
@@ -1051,7 +1051,7 @@ export function p2(): number {
     })
 
     function passesTest(x: TestValues): boolean {
-        let [min, max, char, text] = x
+        let {min, max, char, text} = x
         let p1Match = text[min - 1] == char
         let p2Match = text[max - 1] == char
         let result = (p1Match && !p2Match) || (!p1Match && p2Match)
